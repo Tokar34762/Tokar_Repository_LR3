@@ -4,24 +4,23 @@
 using namespace std;
 
 void inputArraySize(int &size) {
-  cout << "Введите размер массива: ";
+  cout << "Enter the array size: ";
   cin >> size;
-  // Проверка на корректность ввода
+  // Checking for correct input
   while (size <= 0) {
-    cout << "Размер массива должен быть положительным. Пожалуйста, введите "
-            "снова: ";
+    cout << "The array size must be positive. Please enter again: ";
     cin >> size;
   }
 }
 
-void inputArrayValues(vector<int> array, int size) {
-  cout << "Введите " << size << " целых числа(а): ";
-  for (int i = 0; i < size; ++i) {
+void inputArrayValues(vector<int> &array) {
+  cout << "Enter " << array.size() << " integer(s): ";
+  for (int i = 0; i < array.size(); ++i) {
     cin >> array[i];
   }
 }
 
-int sumArray(const vector<int> array) {
+int sumArray(const vector<int> &array) {
   int sum = 0;
   for (int num : array) {
     sum += num;
@@ -29,9 +28,9 @@ int sumArray(const vector<int> array) {
   return sum;
 }
 
-double averageArray(const vector<int> array) {
+double averageArray(const vector<int> &array) {
   if (array.empty())
-    return 0.0; // Защита от деления на ноль
+    return 0.0; // Protection against division by zero
   return static_cast<double>(sumArray(array)) / array.size();
 }
 
@@ -56,7 +55,7 @@ int main() {
       array.resize(size);
       break;
     case 2:
-      inputArrayValues(array, size);
+      inputArrayValues(array);
       break;
     case 3: {
       int sum = sumArray(array);
