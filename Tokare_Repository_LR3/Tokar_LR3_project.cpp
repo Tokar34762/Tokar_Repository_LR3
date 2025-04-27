@@ -21,7 +21,13 @@ void inputArrayValues(vector<int> array, int size) {
   }
 }
 
-int sumArray(vector<int> array) { return 0; }
+int sumArray(const vector<int> array) {
+  int sum = 0;
+  for (int num : array) {
+    sum += num;
+  }
+  return sum;
+}
 
 double averageArray(vector<int> array) { return 0.0; }
 
