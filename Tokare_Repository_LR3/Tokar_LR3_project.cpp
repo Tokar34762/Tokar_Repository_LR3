@@ -29,7 +29,11 @@ int sumArray(const vector<int> array) {
   return sum;
 }
 
-double averageArray(vector<int> array) { return 0.0; }
+double averageArray(const vector<int> array) {
+  if (array.empty())
+    return 0.0; // Защита от деления на ноль
+  return static_cast<double>(sumArray(array)) / array.size();
+}
 
 int main() {
   int choice;
