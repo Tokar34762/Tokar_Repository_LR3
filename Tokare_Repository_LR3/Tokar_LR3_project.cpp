@@ -3,7 +3,16 @@
 
 using namespace std;
 
-void inputArraySize(int &size) {}
+void inputArraySize(int &size) {
+  cout << "Введите размер массива: ";
+  cin >> size;
+  // Проверка на корректность ввода
+  while (size <= 0) {
+    cout << "Размер массива должен быть положительным. Пожалуйста, введите "
+            "снова: ";
+    cin >> size;
+  }
+}
 
 void inputArrayValues(vector<int> array, int size) {}
 
