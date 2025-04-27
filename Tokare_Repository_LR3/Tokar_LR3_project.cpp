@@ -14,7 +14,12 @@ void inputArraySize(int &size) {
   }
 }
 
-void inputArrayValues(vector<int> array, int size) {}
+void inputArrayValues(vector<int> array, int size) {
+  cout << "Введите " << size << " целых числа(а): ";
+  for (int i = 0; i < size; ++i) {
+    cin >> array[i];
+  }
+}
 
 int sumArray(vector<int> array) { return 0; }
 
